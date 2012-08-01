@@ -152,6 +152,7 @@ module JSON
   # * *object_class*: Defaults to Hash
   # * *array_class*: Defaults to Array
   def parse(source, opts = {})
+    opts[:max_nesting] ||= false
     Parser.new(source, opts).parse
   end
 
